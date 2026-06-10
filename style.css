@@ -1,0 +1,50 @@
+
+*{box-sizing:border-box;margin:0}
+body{
+font-family:Arial,sans-serif;color:#fff;min-height:100vh;overflow:hidden;
+background:
+radial-gradient(circle at 20% 10%,rgba(0,255,255,.25),transparent 30%),
+radial-gradient(circle at 85% 30%,rgba(130,90,255,.25),transparent 35%),
+linear-gradient(135deg,#020617,#071a33,#112f62);
+}
+.light{filter:invert(.03)}
+.bg{
+position:fixed;inset:0;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1800&auto=format&fit=crop');
+background-size:cover;background-position:center;
+opacity:.9
+}
+.app{position:relative;display:grid;grid-template-columns:300px 1fr;min-height:100vh}
+.sidebar,.glass{
+backdrop-filter:blur(26px);
+background:rgba(255,255,255,.08)
+}
+.sidebar{padding:30px;border-right:1px solid rgba(255,255,255,.1)}
+.logo{width:130px;margin-bottom:15px}
+#playlist{margin-top:20px;display:grid;gap:10px}
+.song{padding:12px;border-radius:14px;background:#ffffff12;cursor:pointer}
+.player{display:grid;place-items:center;padding:30px}
+.glass{
+width:min(760px,92%);
+padding:40px;border-radius:30px;text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.4)
+}
+.disc{
+width:240px;height:240px;margin:auto;border-radius:50%;
+background:conic-gradient(#011114,#0a1f25,#38caf2fb);
+animation:spin 12s linear infinite
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.controls,.extras{display:flex;justify-content:center;gap:12px;margin-top:18px;flex-wrap:wrap}
+button{
+border:none;padding:14px 18px;border-radius:16px;
+background:linear-gradient(135deg,#00d4ff,#4f46e5);color:white
+}
+input[type=range]{width:100%;margin-top:18px}
+.time{display:flex;justify-content:space-between}
+.volume{margin-top:18px}
+@media(max-width:800px){
+.app{grid-template-columns:1fr}
+.sidebar{display:none}
+}

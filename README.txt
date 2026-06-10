@@ -1,0 +1,1 @@
+Add your MP3 files and update songs[] in script.js
